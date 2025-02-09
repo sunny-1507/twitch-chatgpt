@@ -28,6 +28,9 @@ export class OpenAIOperations {
             //Check if message history is exceeded
             this.check_history_length();
 
+            
+            console.log(this.model, this.messaes)
+            
             // Use await to get the response from openai
             const response = await this.openai.chat.completions.create({
                 model: this.model_name,
@@ -38,6 +41,8 @@ export class OpenAIOperations {
                 frequency_penalty: 0,
                 presence_penalty: 0,
             });
+
+            console.log(response)
 
             // Check if response has choices
             if (response.choices) {
