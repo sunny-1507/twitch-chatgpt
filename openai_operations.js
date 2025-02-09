@@ -23,7 +23,7 @@ export class OpenAIOperations {
     async make_openai_call(text) {
         try {
 
-            console.log(text)
+            console.error(text)
             
             //Add user message to  messages
             this.messages.push({role: "user", content: text});
