@@ -22,6 +22,9 @@ export class OpenAIOperations {
 
     async make_openai_call(text) {
         try {
+
+            console.log(text)
+            
             //Add user message to  messages
             this.messages.push({role: "user", content: text});
 
@@ -29,7 +32,7 @@ export class OpenAIOperations {
             this.check_history_length();
 
             
-            console.log(this.model, this.messaes)
+            console.log(this.model_name, this.messages)
             
             // Use await to get the response from openai
             const response = await this.openai.chat.completions.create({
